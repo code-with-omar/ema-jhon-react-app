@@ -1,10 +1,42 @@
-.shop-container{
+.shop-container {
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 4fr 2fr;
     padding-left: 100px;
+
 }
-.products-container{
+
+.products-container {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 45px;
+    margin-top: 118px;
+}
+
+.cart-container {
+    background-color: rgba(255, 153, 0, 0.30);
+    margin-left: 45px;
+    color: #1C2B35;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.order-summary {
+    margin-top: 28px;
+    text-align: center;
+    color: #1C2B35;
+    font-size: 25px;
+}
+.order-summary-info{
+    padding-left: 23px;
+    margin-top: 50px;
+    font-size: 17px;
+}
+.order-summary-info .spacing{
+    margin-bottom: 25px;
+}
+.grand-total{
+    color: #0E161A;
+    font-size: 21px;
 }
