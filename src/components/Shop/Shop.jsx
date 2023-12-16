@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './Shop.css'
 import { useEffect } from 'react';
 import Product from '../Product/Product';
+import Cart from '../Cart/Cart';
 
 const Shop = () => {
     const [products, setProducts] = useState([])
@@ -22,14 +23,7 @@ const Shop = () => {
                     <Product product={product} key={product.id} handleAddToCart={handleAddToCart}></Product>)}
             </div>
             <div className='cart-container'>
-                <h2 className='order-summary'>Order summary </h2>
-                <div className='order-summary-info'>
-                    <h3 className='selected-items spacing'>Selected Items: {cart.length}</h3>
-                    <h3 className='spacing'>Total Price:</h3>
-                    <h3 className='spacing'>Total Shipping Charge: $</h3>
-                    <h3 className='spacing'>Tax: $</h3>
-                    <h1 className='grand-total'>Grand Total: $</h1>
-                </div>
+                <Cart cart={cart}></Cart>
 
             </div>
         </div>

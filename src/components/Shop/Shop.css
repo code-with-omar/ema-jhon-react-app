@@ -20,23 +20,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    
 }
 
-.order-summary {
-    margin-top: 28px;
-    text-align: center;
-    color: #1C2B35;
-    font-size: 25px;
-}
-.order-summary-info{
-    padding-left: 23px;
-    margin-top: 50px;
-    font-size: 17px;
-}
-.order-summary-info .spacing{
-    margin-bottom: 25px;
-}
-.grand-total{
-    color: #0E161A;
-    font-size: 21px;
-}
