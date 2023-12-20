@@ -1,7 +1,8 @@
-.cart{
-    position:sticky;
-    top:0
+.cart {
+    position: sticky;
+    top: 0
 }
+
 .order-summary {
     margin-top: 28px;
     text-align: center;
