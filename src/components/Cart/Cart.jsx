@@ -5,9 +5,15 @@ const Cart = (props) => {
     const cart = props.cart;
     let total = 0;
     let totalShipping = 0;
+    let quantity=0;
     for (const product of cart) {
-        total = total + product.price;
-        totalShipping = totalShipping + product.shipping;
+        if(product.quantity===0){
+            product.quantity=1;
+        }
+        // product.quantity=product.quantity|| 1;
+        total = total + (product.price*product.quantity);
+        totalShipping = totalShipping + product.shipping*product.quantity;
+        quantity=quantity+ product.quantity
     }
     const tax=(total+totalShipping)*7/100;
     const totalPrice=total+totalShipping+tax;
@@ -15,7 +21,7 @@ const Cart = (props) => {
         <div className='cart'>
             <h2 className='order-summary'>Order summary </h2>
             <div className='order-summary-info'>
-                <h3 className='selected-items spacing'>Selected Items: {cart.length}</h3>
+                <h3 className='selected-items spacing'>Selected Items: {quantity}</h3>
                 <h3 className='spacing'>Total Price:${total.toFixed(2)}</h3>
                 <h3 className='spacing'>Total Shipping Charge: ${totalShipping.toFixed(2)}</h3>
                 <h3 className='spacing'>Tax: ${tax.toFixed(2)}</h3>

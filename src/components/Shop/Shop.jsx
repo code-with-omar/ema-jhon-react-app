@@ -19,7 +19,7 @@ const Shop = () => {
         setCart(newAddCart);
         addToDb(product.id)
     }
-    // fetch save products data in local store here
+    // fetch saved products data in local store here
 
     useEffect(() => {
         const storedData = getShoppingCart();
