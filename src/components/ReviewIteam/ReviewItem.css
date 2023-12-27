@@ -1,0 +1,33 @@
+.review-iteam {
+    width: 571px;
+    border: 1px solid #95A0A7;
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+    padding: 8px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.review-details{
+    flex-grow: 1;
+}
+.review-title {
+    color: #1C2B35;
+    font-family: Lato;
+    font-size: 21px;
+    font-weight: 400;
+    letter-spacing: 0.032px;
+}
+
+.review-details p {
+    margin: 8px 10px;
+}
+
+.review-iteam img {
+    width: 91px;
+    height: 91px;
+}
+.orange{
+    color:#F90;
+}
