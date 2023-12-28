@@ -22,4 +22,22 @@
     line-height: normal;
     
 }
-
+.link{
+    text-decoration: none;
+}
+.review-order-btn{
+    height: 48px;
+    border-radius: 4px;
+    background: #FF9900;
+    border: none;
+    font-weight: 400;
+    font-size: 17px;
+    color: white;
+    margin-top: 20px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    cursor: pointer;
+}

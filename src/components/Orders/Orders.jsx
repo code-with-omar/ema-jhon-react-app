@@ -1,4 +1,5 @@
-import { useLoaderData } from "react-router-dom";
+
+import { Link, useLoaderData } from "react-router-dom";
 import Cart from "../Cart/Cart";
 import './Orders.css'
 import ReviewItem from "../ReviewIteam/ReviewItem";
@@ -27,7 +28,11 @@ const Orders = () => {
             </div>
             <div className='cart-container'>
                 <Cart cart={carts
-                } handleRemoveFullCart={handleRemoveFullCart}></Cart>
+                } handleRemoveFullCart={handleRemoveFullCart}>
+                    <Link to='/proceed' className='link'>
+                        <button className='review-order-btn'>Proceed Checkout</button>
+                    </Link>
+                </Cart>
 
             </div>
         </div>
