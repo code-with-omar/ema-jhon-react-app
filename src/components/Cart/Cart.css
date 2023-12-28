@@ -24,3 +24,21 @@
     color: #0E161A;
     font-size: 21px;
 }
+
+.clear-cart-btn {
+   
+    height: 48px;
+    border-radius: 4px;
+    background: #FF3030;
+    border: none;
+    font-weight: 400;
+    font-size: 17px;
+    color: white;
+    margin-top: 70px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    cursor: pointer;
+}

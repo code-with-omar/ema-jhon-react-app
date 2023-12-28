@@ -3,7 +3,7 @@ import './Shop.css'
 import { useEffect } from 'react';
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
-import { addToDb, getShoppingCart } from '../../../utilities/fakedb';
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../../../utilities/fakedb';
 
 const Shop = () => {
     const [products, setProducts] = useState([])
@@ -37,6 +37,11 @@ const Shop = () => {
 
         setCart(savedCart);
     }, [products])
+
+    const handleRemoveFullCart=()=>{
+        setCart([]);
+        deleteShoppingCart()
+    }
     return (
         <div className='shop-container'>
             <div className='products-container'>
@@ -44,7 +49,7 @@ const Shop = () => {
                     <Product product={product} key={product.id} handleAddToCart={handleAddToCart}></Product>)}
             </div>
             <div className='cart-container'>
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart} handleRemoveFullCart={handleRemoveFullCart}></Cart>
 
             </div>
         </div>
