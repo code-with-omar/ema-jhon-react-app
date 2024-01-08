@@ -15,31 +15,36 @@ import Inventory from './components/Inventory/Inventory.jsx';
 import Login from './components/Login/Login.jsx';
 import userProductsLoader from './useProductsLoader/userProductsLoader.js';
 import ProceedCheckout from './components/proceedCheckout/ProceedCheckout.jsx';
+import SignUp from './components/SignUp/SignUp.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
     children: [
       {
-        path:'/',
+        path: '/',
         element: <Shop></Shop>
       },
       {
-        path:'orders',
-        element:<Orders></Orders>,
-        loader:userProductsLoader
+        path: 'orders',
+        element: <Orders></Orders>,
+        loader: userProductsLoader
       },
       {
-        path:'inventory',
-        element:<Inventory></Inventory>
+        path: 'inventory',
+        element: <Inventory></Inventory>
       },
       {
-        path:'proceed',
-        element:<ProceedCheckout></ProceedCheckout>
+        path: 'proceed',
+        element: <ProceedCheckout></ProceedCheckout>
       },
       {
-        path:'login',
-        element:<Login></Login>
+        path: 'login',
+        element: <Login></Login>
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>
       }
     ]
   },
