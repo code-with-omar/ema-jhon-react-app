@@ -9,11 +9,14 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
         const comfirmPassword = form.comfirm.value;
-        if (password !== comfirmPassword) {
+        setError('')
+        if (password.length < 6) {
+            setError("Password must grater then or equal six digits");
+            return;
+        }
+        else if (password !== comfirmPassword) {
             setError("Password did not match");
             return;
-        } else if (password < 6) {
-            setError("Password must grater then or equal six digits");
         }
     }
     return (
@@ -33,7 +36,7 @@ const SignUp = () => {
                     <input type="password" name="comfirm" id="comfirm-password" required />
                 </div>
                 <div>
-                    <p>{error}</p>
+                    <p className='error'>{error}</p>
                 </div>
                 <div className='submit'>
                     <label htmlFor=""></label>

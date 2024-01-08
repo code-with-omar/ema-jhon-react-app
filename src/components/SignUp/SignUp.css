@@ -55,6 +55,13 @@
     letter-spacing: 0.032px;
     cursor: pointer;
 }
-.submit input:hover{
+
+.submit input:hover {
     background: rgba(255, 153, 0, 0.40);
+}
+
+.error {
+    font-size: 18px;
+    color: rgb(220, 9, 9);
+    margin-bottom: 20px;
 }
