@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Login.css'
 
 const Login = () => {
@@ -18,6 +19,7 @@ const Login = () => {
                     <input type="submit" value="Login" />
                 </div>
             </form>
+            <p className='login-message'>New to Ema-john? <Link className='login-link' to="/signup">Create New Account </Link> </p>
         </div>
     );
 };

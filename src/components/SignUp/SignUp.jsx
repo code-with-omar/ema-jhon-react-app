@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './SignUp.css'
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
     const [error, setError] = useState('')
@@ -9,7 +10,7 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
         const comfirmPassword = form.comfirm.value;
-        setError('')
+        setError('');
         if (password.length < 6) {
             setError("Password must grater then or equal six digits");
             return;
@@ -18,6 +19,7 @@ const SignUp = () => {
             setError("Password did not match");
             return;
         }
+        form.reset();
     }
     return (
         <div className='form-container'>
@@ -43,6 +45,7 @@ const SignUp = () => {
                     <input type="submit" value="Sign Up" />
                 </div>
             </form>
+            <p className='login-message'>Already have an account? <Link className='login-link' to="/login">Login </Link> </p>
         </div>
     );
 };
