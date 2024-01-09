@@ -1,10 +1,16 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
 
 const Login = () => {
-    const [error, setError] = useState('')
+    const [error, setError] = useState('');
+    //this navigation hook work to login user direction
+    const navigate = useNavigate();
+    // Find user location(Which place user come form thats login page)
+    const location = useLocation();
+    const from = location.state?.form?.pathname || "/"//optional chaining
+    console.log(from)
     const { loginUser } = useContext(AuthContext);
     const handleFormLogin = (event) => {
         event.preventDefault();
@@ -15,8 +21,10 @@ const Login = () => {
         loginUser(email, password)
             .then(result => {
                 console.log(result.user);
-                form.reset()
-            }).catch(error=>{
+                form.reset();
+                // its means when user login route go to target location page
+                navigate(from);
+            }).catch(error => {
                 console.log(error);
                 setError(error.message);
             })

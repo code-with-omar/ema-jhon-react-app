@@ -6,7 +6,8 @@ const auth = getAuth(app);
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState(null);
+    const [loading, setloading] = useState(true);
     //create sign up user
     const signUp = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
@@ -20,14 +21,16 @@ const AuthProvider = ({ children }) => {
         signOut(auth);
     }
     //Get the currently signed-in user
-    const unsubscribe =onAuthStateChanged(auth, currentUser => {
+    const unsubscribe = onAuthStateChanged(auth, currentUser => {
         setUser(currentUser);
-        return ()=>{
+        setloading(false)
+        return () => {
             return unsubscribe()
         }
     })
     const authInfo = {
         user,
+        loading,
         signUp,
         loginUser,
         logOut
