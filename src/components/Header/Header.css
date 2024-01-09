@@ -15,9 +15,11 @@
     color:white;
     margin-right:32px;
 }
-.header div a:last-child{
-    margin-right: 0px;
-}
+
 .header div a:hover{
     color:rgb(255, 0, 0);
+}
+.user-login{
+    color:white;
+    margin-right:32px;
 }
